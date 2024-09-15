@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout with Z-Index</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-full">
+    <div class="h-full flex flex-col justify-center md:flex-row  sm:w-full xl:w-[1440px] xl:h-[1024px] lg:m-auto">
+        <!-- Left side (50% width) -->
+        <div class="w-full md:w-1/2 p-6 flex items-center justify-center bg-white">
+            <div class="max-w-96 lg:w-64">
+                <div class="w-2 h-1 bg-black"></div>
+                <h1 class="text-2xl font-bold font-poppins text-blue-400">Let’s get you <br>set up</h1>
+                <p class="my-4 w-80 text-sm font-light font-sans">
+                    It only takes a moment. And it’ll take your time with SkillSetGrow even better.
+                </p>
+                <p class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm">
+                    Continue as Trainee
+                </p>
+                <p class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm">
+                    Continue as Trainer
+                </p>
+                <p class="bg-slate-300 py-3 mb-6 text-center rounded-md font-serif text-sm">
+                    Continue as Training Company
+                </p>
+                <p class="bg-slate-900 text-white py-2 mb-6 text-center rounded-3xl font-serif text-xs">
+                    <a href="/signIn.html">Get set up</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Right side (50% width) with images -->
+        <div class="hidden md:block w-full md:w-1/2 h-full relative overflow-hidden">
+            <!-- Background Rectangle -->
+            <img src="./images/Rectangle.png" alt="Background Rectangle" class="absolute inset-0 w-full h-full object-cover z-0">
+            <h1 class="z-30 mt-8 ms-10 lg:mt-24 w-48 xl:w-8/12 h-auto relative text-white text-xs md:text-2xl lg:text-4xl xl:text-6xl font-bold p-4">
+                Welcome to Skill Set Grow
+            </h1>
+            <!-- Top right image -->
+            <img src="./images/!.png" alt="Top Right Image" class="absolute  top-0 right-20 z-10 w-10 md:w-14 xl:w-20 h-auto">
+
+            <!-- Bottom image (Frame) -->
+            <img src="./images/Frame.png" alt="Bottom Frame" class="absolute h-5/6 -mb-16 xl:-mb-4 bottom-0 right-0 z-20 w-full object-contain ">
+        </div>
+    </div>
+</body>
+</html>
