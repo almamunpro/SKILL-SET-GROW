@@ -7,46 +7,138 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for the toggle */
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
+        .toggle-switch .toggle-thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
 
-</head>
-<body>
-    <div class="grid grid-cols-7 h-screen">
-        <!-- Column 1 -->
-        <div class="h-full  col-span-2 bg-slate-800">
+        .dark-mode .toggle-switch {
+            background-color: #333;
+        }
+
+        .dark-mode .toggle-thumb {
+            transform: translateX(30px);
+            background-color: #000;
+        }
+        /* cover */
+        .cover{
+            width: 100%;
             
-            <div class="flex flex-row my-6 mx-6  justify-between m-1">
+            background-image: url('./images/cover.png');
+            background-position:  bottom no-repeat; 
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="light-mode bg-gray-100 text-gray-800 transition-colors duration-300">
+    <div class="grid grid-cols-7 lg:grid-cols-12 h-screen">
+        <!-- Column 1 -->
+        <div class="h-full col-span-2 bg-slate-800">
+            <div class="flex flex-row my-6 ml-4 justify-between">
                 <h1 class="text-xl font-poppins text-white">Skill|Set|Grow</h1>
                 <button onclick="">
-                    <i class="fa-solid fa-angle-left text-2xl text-white"></i>
+                    <i class="fa-solid fa-angle-left text-2xl mr-4 text-white"></i>
                 </button>
-            </button>
             </div>
-            <h3 class="mt-6 mx-4 text-sm font-semibold font-poppins text-white">TRAINEE</h3>
+            <h3 class="mt-6 ml-4 text-sm font-semibold font-poppins text-white">TRAINEE</h3>
             <nav class="flex flex-col py-[15px] mx-4">
-
-                <a class="flex justify-start py-[12px] text-blue-400 border border-white rounded " href=""><img class="ml-4" src="./images/dashboard.png" alt=""><span class="ml-5">Dashboard</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300  hover:border  border-white rounded " href=""><img class="ml-4" src="./images/message.png" alt=""><span class="ml-5">Messages</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/running.png" alt=""><span class="ml-5">Running Task</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/ownvideo.png" alt=""><span class="ml-5">Own Videos</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/Training.png" alt=""><span class="ml-5">Training company</span> </a>
-                
-
+                <a class="flex justify-start py-[12px] text-blue-400 border border-white rounded" href="">
+                    <img class="ml-4" src="./images/dashboard.png" alt="">
+                    <span class="ml-5">Dashboard</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/message.png" alt="">
+                    <span class="ml-5">Messages</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/running.png" alt="">
+                    <span class="ml-5">Running Task</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/ownvideo.png" alt="">
+                    <span class="ml-5">Own Videos</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/Training.png" alt="">
+                    <span class="ml-5">Training Company</span>
+                </a>
                 <h1 class="text-white text-xs font-poppins py-3">ADDITIONAL</h1>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/supportTickets.png" alt=""><span class="ml-5">Spending History</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/supportTickets.png" alt=""><span class="ml-5">Support Tickets</span> </a>
-                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/Accountsettings.png" alt=""><span class="ml-5">Account Settings</span> </a>
-                
-                
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/support.png" alt="">
+                    <span class="ml-5">Spending History</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/supportTickets.png" alt="">
+                    <span class="ml-5">Support Tickets</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="">
+                    <img class="ml-4" src="./images/Accountsettings.png" alt="">
+                    <span class="ml-5">Account Settings</span>
+                </a>
             </nav>
         </div>
         <!-- Column 2 to 6 -->
-        <div class="col-span-5 h-full bg-orange-300">
-            <header>
-                <input type="search">
+        <div class="col-span-5 lg:col-span-10 h-full bg-orange-300">
+            <header class="flex justify-between items-center p-4 bg-white shadow-md">
+                <div class="relative flex items-center w-6/12">
+                    <i class="absolute z-10 ml-3 fa-solid fa-magnifying-glass text-gray-500 opacity-40"></i>
+                    <input class="relative z-0 w-full pl-10 p-2 rounded border border-gray-300" type="search" placeholder="Search anything...">
+                </div>
+                <div class="flex justify-center w-5/12 items-center ml-24">
+                    <!-- Night mode toggle switch -->
+                    <div id="toggleSwitch" class="toggle-switch mr-3">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <p class="opacity-70 mr-8">Night mode</p>
+                    <div class="relative">
+                        <i class="fa-solid fa-chevron-down mr-1"></i>
+                        <i class="relative z-0 mr-6 fa-solid fa-bell text-2xl opacity-70"> <div class="absolute z-10 -mt-8 ml-3 p-[4px] border-black border-2 rounded-full bg-red-600"></div></i>
+                    </div>
+                    <div class=" flex rounded-full w-10 h-10 bg-slate-400">
+                        <img class="rounded-full w-full h-full"  src="./images/dp.png" alt="">
+                    </div>
+                </div>
             </header>
+        
+            <div class="cover bg-left-bottom  w-11/12 h-[366px] m-auto mt-10 ">
+                <div class="w-5/12 ml-14 flex flex-col ">
+                    <h1 class="text-5xl mb-12 w-7/12 pt-10 font-bold text-white">How to do learn Jumping and how to land safely</h1>
+                    <div class="flex gap-4">
+                        <button class="px-4 py-2 font-poppins gap-2 items-center justify-center rounded-xl  bg-white flex"><img src="./images/solar_play-linear.png" alt=""> Play</button>
+                        <button class=" px-4  font-poppins   rounded-xl  bg-white text-center"> <span>Show Info</span> </button>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+            <script>
+                const toggleSwitch = document.getElementById('toggleSwitch');
+                const body = document.body;
+        
+                toggleSwitch.addEventListener('click', function () {
+                    body.classList.toggle('dark-mode');
+                    body.classList.toggle('light-mode');
+                });
+            </script>
         </div>
     </div>
 </body>
 </html>
- 
