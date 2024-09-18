@@ -5,23 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
-    <div class="grid grid-cols-6 h-screen">
+    <div class="grid grid-cols-7 h-screen">
         <!-- Column 1 -->
-        <div class="h-full bg-slate-500">
+        <div class="h-full  col-span-2 bg-slate-800">
             
-            <div class="flex">
-            <h1>SKILL|SET|GROW</h1>
-            <button onclick=""> 
-            <img src="/images/left-arrow.png" alt="">
+            <div class="flex flex-row my-6 mx-6  justify-between m-1">
+                <h1 class="text-xl font-poppins text-white">Skill|Set|Grow</h1>
+                <button onclick="">
+                    <i class="fa-solid fa-angle-left text-2xl text-white"></i>
+                </button>
             </button>
             </div>
+            <h3 class="mt-6 mx-4 text-sm font-semibold font-poppins text-white">TRAINEE</h3>
+            <nav class="flex flex-col py-[15px] mx-4">
 
+                <a class="flex justify-start py-[12px] text-blue-400 border border-white rounded " href=""><img class="ml-4" src="./images/dashboard.png" alt=""><span class="ml-5">Dashboard</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300  hover:border  border-white rounded " href=""><img class="ml-4" src="./images/message.png" alt=""><span class="ml-5">Messages</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/running.png" alt=""><span class="ml-5">Running Task</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/ownvideo.png" alt=""><span class="ml-5">Own Videos</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/Training.png" alt=""><span class="ml-5">Training company</span> </a>
+                
+
+                <h1 class="text-white text-xs font-poppins py-3">ADDITIONAL</h1>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/supportTickets.png" alt=""><span class="ml-5">Spending History</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/supportTickets.png" alt=""><span class="ml-5">Support Tickets</span> </a>
+                <a class="flex justify-start py-[12px] text-slate-300 hover:border  border-white rounded  " href=""><img class="ml-4" src="./images/Accountsettings.png" alt=""><span class="ml-5">Account Settings</span> </a>
+                
+                
+            </nav>
         </div>
         <!-- Column 2 to 6 -->
         <div class="col-span-5 h-full bg-orange-300">
-            5
+            <header>
+                <input type="search">
+            </header>
         </div>
     </div>
 </body>
