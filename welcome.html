@@ -16,27 +16,61 @@
     </style>
 </head>
 <body class="bg-gray-100 h-full">
-    <div class="h-full flex flex-col justify-center md:flex-row  sm:w-full xl:w-[1440px] xl:h-[1024px] lg:m-auto">
+    <div class="h-full flex flex-col justify-center md:flex-row  sm:w-full xl:w-[1440px]  lg:m-auto">
         <!-- Left side (50% width) -->
         <div class="w-full md:w-1/2 p-6 flex items-center justify-center bg-white">
             <div class="max-w-96 lg:w-64">
                 <div class="w-2 h-1 bg-black"></div>
-                <h1 class="text-2xl font-bold font-poppins text-blue-400">Let’s get you <br>set up</h1>
+                <h1 class="text-2xl mt-7 font-bold font-poppins text-blue-400">Let’s get you <br>set up</h1>
                 <p class="my-4 w-80 text-sm font-light font-sans">
                     It only takes a moment. And it’ll take your time with SkillSetGrow even better.
                 </p>
-                <p class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm">
-                    Continue as Trainee
-                </p>
-                <p class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm">
-                    Continue as Trainer
-                </p>
-                <p class="bg-slate-300 py-3 mb-6 text-center rounded-md font-serif text-sm">
-                    Continue as Training Company
-                </p>
+                
+                <div class="flex flex-col gap-1">
+                    <a href="#" id="trainee" onclick="selectUser('/sec-1/Signin.html', 'trainee')" class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm hover:border border-black">
+                        Continue as Trainee
+                    </a>
+                    <a href="#" id="trainer" onclick="selectUser('/sec-2/Signin.html', 'trainer')" class="bg-slate-300 py-3 mb-1 text-center rounded-md font-serif text-sm hover:border border-black">
+                        Continue as Trainer
+                    </a>
+                    <a href="#" id="company" onclick="selectUser('/sec-3/Signin.html', 'company')" class="bg-slate-300 py-3 mb-6 text-center rounded-md font-serif text-sm hover:border border-black">
+                        Continue as Training Company
+                    </a>
+                </div>
+                
                 <p class="bg-slate-900 text-white py-2 mb-6 text-center rounded-3xl font-serif text-xs">
-                    <a href="/signIn.html">Get set up</a>
+                    <button onclick="proceedToSignup()">Get set up</button>
                 </p>
+                
+                <script>
+                    let selectedUrl = '';
+                    let selectedElement = null;
+                
+                    // Function to store the selected URL and apply a border to the selected link
+                    function selectUser(url, elementId) {
+                        selectedUrl = url;
+                
+                        // Remove the border from the previously selected element
+                        if (selectedElement) {
+                            selectedElement.classList.remove('border-2', 'border-black');
+                        }
+                
+                        // Add a border to the newly selected element
+                        selectedElement = document.getElementById(elementId);
+                        selectedElement.classList.add('border-2', 'border-black');
+                    }
+                
+                    // Function to proceed when "Get set up" is clicked
+                    function proceedToSignup() {
+                        if (selectedUrl) {
+                            window.location.href = selectedUrl;
+                        } else {
+                            alert('Please select an option before proceeding!');
+                        }
+                    }
+                </script>
+                
+                
             </div>
         </div>
 
@@ -44,7 +78,7 @@
         <div class="hidden md:block w-full md:w-1/2 h-full relative overflow-hidden">
             <!-- Background Rectangle -->
             <img src="./images/Rectangle.png" alt="Background Rectangle" class="absolute inset-0 w-full h-full object-cover z-0">
-            <h1 class="z-30 mt-8 ms-10 lg:mt-24 w-48 xl:w-8/12 h-auto relative text-white text-xs md:text-2xl lg:text-4xl xl:text-6xl font-bold p-4">
+            <h1 class="z-30 mt-8 ms-10 lg:mt-16 w-48 xl:w-8/12 h-auto relative text-white text-xs md:text-2xl lg:text-4xl xl:text-6xl font-bold p-4">
                 Welcome to Skill Set Grow
             </h1>
             <!-- Top right image -->

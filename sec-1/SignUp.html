@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - SkillSetGrow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-full">
+    <div class="h-full flex flex-col justify-center md:flex-row sm:w-full xl:w-[1440px] lg:m-auto">
+        <!-- Left side (50% width) -->
+        <div class="w-full md:w-1/2 p-6 flex justify-center items-center bg-white">
+            <div class="max-w-md w-2/3">
+            <div class="w-3 mb-5 h-1 bg-blue-400"></div>
+            <h1 class="text-3xl font-bold font-poppins text-blue-400 mb-6">Sign <span class="text-black">up</span></h1>
+
+            <div class="text-center border w-full p-2 rounded-3xl">
+                <a class="w-full font-poppins text-sm font-medium" href=""><i class="fa-brands fa-linkedin" style="color: #187cc9;"></i> Sign up with linkedin</a>
+            </div>
+            <div class="flex items-center ml-14 mt-10">
+                <hr class="w-2/12 mr-2"><p class="text-center text-base font-normal">Or sign up with linkedin</p><hr class="w-2/12 ml-2">
+            </div>
+                <label class="w-full text-sm font-sans" for="name">Your name</label>
+                <input class="w-full -ml-3 p-3 border-none border-gray-300" type="text" id="name" placeholder="john williams">
+                <hr class="mb-2">
+                <label class="w-full text-sm font-poppins" for="email">Your email</label>
+                <input class="w-full -ml-3 p-3 border-none border-gray-300" type="email" id="email" placeholder="johnwilliams@example.com">
+                <hr class="mb-2">
+                <label class="text-sm font-poppins" for="password">Password</label>
+                <input class="w-full -ml-3 p-3" type="password" id="password" placeholder="************">
+                <hr class="mb-4">
+                <label class="text-sm font-poppins" for="password">Repeat Password</label>
+                <input class="w-full -ml-3 p-3" type="password" id="password" placeholder="************">
+                <hr class="mb-4">
+                <div class="flex items-center justify-between mb-6">
+                    <label for="rememberMe" class="flex items-center space-x-2">
+                        <input type="checkbox" id="rememberMe" class="w-4 h-4 text-blue-600">
+                        <span class="text-gray-500 md:text-xs  lg:text-base font-poppins">I accept the <span class="text-black font-semibold">terms & conditions</span></span>
+                    </label>
+                </div>
+
+                <button class="w-full bg-slate-700 text-white py-3 rounded-3xl font-medium font-poppins text-lg mb-6"><a href="/signupnext.html">Next</a></button>
+
+                <p class="ml-5 text-gray-500 text-sm">
+                    Already have an account? <a href="/signIn.html" class="text-slate-700 font-medium font-poppins"> Sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Right side (50% width) with images -->
+        <div class="hidden md:block w-full md:w-1/2 h-full relative overflow-hidden">
+            <!-- Background Rectangle -->
+            <img src="./images/Rectangle.png" alt="Background Rectangle" class="absolute inset-0 w-full h-full object-cover z-0">
+
+            <!-- Visible Heading -->
+            <h1 class="z-30 mt-8 ms-10 lg:mt-24 w-1/2 xl:w-1/2 h-auto relative text-white text-xs md:text-xl lg:text-3xl xl:text-4xl font-bold p-4">
+                Let’s start as 
+Trainee amazing
+journey with us
+            </h1>
+
+            <!-- Top right image -->
+            <img src="./images/!.png" alt="Top Right Image" class="absolute top-0 right-20 z-10 w-10 md:w-14 xl:w-20 h-auto">
+
+            <!-- Bottom image (Frame) -->
+            <img src="./images/Group.png" alt="Bottom Frame" class="absolute h-5/6 -mb-16 xl:-mb-4 bottom-0 left-0 z-20 -ml-16 w-full object-contain">
+        </div>
+    </div>
+</body>
+</html>
