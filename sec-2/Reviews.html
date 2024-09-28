@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for the toggle */
+        .toggle-switch {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background-color: #ddd;
+        border-radius: 9999px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .toggle-switch .toggle-thumb {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 26px;
+        height: 26px;
+        background-color: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+    }
+
+    .dark-mode {
+        background-color: #333 !important;
+    }
+
+    .dark-mode .toggle-thumb {
+        transform: translateX(30px);
+        background-color: #000;
+    }
+        /* cover */
+        .cover{
+            background: linear-gradient(90deg, #50c3d0 66.47%, rgba(13, 170, 188, 0.00) 100%);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body class="light-mode bg-gray-100 text-gray-800 transition-colors duration-300">
+    <div class="grid grid-cols-7 lg:grid-cols-12 h-screen">
+        <!-- Column 1 -->
+        <div class="h-full col-span-2 bg-slate-800">
+            <div class="flex flex-row my-6 ml-4 justify-between">
+                <h1 class="text-xl font-poppins text-white">Skill|Set|Grow</h1>
+                <button onclick="">
+                    <i class="fa-solid fa-angle-left text-2xl mr-4 text-white"></i>
+                </button>
+            </div>
+            <h3 class="mt-6 ml-4 text-sm font-semibold font-poppins text-white">TRAINEE</h3>
+            <nav class="flex flex-col py-[15px] mx-4">
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 rounded" href="/sec-1/homeTrainee.html">
+                    <img class="ml-4" src="./images/dashboard.png" alt="">
+                    <span class="ml-5">Dashboard</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/Chats.html">
+                    <img class="ml-4" src="./images/message.png" alt="">
+                    <span class="ml-5">Messages</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/RunningTask.html">
+                    <img class="ml-4" src="./images/running.png" alt="">
+                    <span class="ml-5">Running Task</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-blue-400 border border-stone-200 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/OwnVideos.html">
+                    <img class="ml-4" src="./images/ownvideo.png" alt="">
+                    <span class="ml-5">Own Videos</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/TrainingCompany.html">
+                    <img class="ml-4" src="./images/Training.png" alt="">
+                    <span class="ml-5">Training Company</span>
+                </a>
+                <h1 class="text-white text-xs font-poppins py-3">ADDITIONAL</h1>
+                <a class="flex justify-start py-[12px] text-blue-400 border-2 border-stone-200 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/SpendingHistory.html">
+                    <img class="ml-4" src="./images/support.png" alt="">
+                    <span class="ml-5 ">Spending History</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-200 border border-stone-400   hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/setting.html">
+                    <img class="ml-4" src="./images/support.png" alt="">
+                    <span class="ml-5">Settings</span>
+                </a>
+  
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/SupportTicker.html">
+                    <img class="ml-4" src="./images/supportTickets.png" alt="">
+                    <span class="ml-5">Support Tickets</span>
+                </a>
+                <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/">
+                    <img class="ml-4" src="./images/Accountsettings.png" alt="">
+                    <span class="ml-5">Account Settings</span>
+                </a>
+            </nav>
+        </div>
+        <!-- Column 2 to 6 -->
+        <div class="col-span-5 lg:col-span-10 h-full ">
+            <header class="flex justify-between items-center p-4 bg-white shadow-md">
+                <div class="relative flex items-center w-6/12">
+                    <i class="absolute z-10 ml-3 fa-solid fa-magnifying-glass text-gray-500 opacity-40"></i>
+                    <input class="relative z-0 w-full pl-10 p-2 rounded border border-gray-300" type="search" placeholder="Search anything...">
+                </div>
+                <div class="flex justify-center w-5/12 items-center ml-24">
+                    <!-- Night mode toggle switch -->
+                    <div id="toggleSwitch" class="toggle-switch mr-3">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <p class="opacity-70 mr-8">Night mode</p>
+                    <div class="relative">
+                        <i class="fa-solid fa-chevron-down mr-1"></i>
+                        <i class="relative z-0 mr-6 fa-solid fa-bell text-2xl opacity-70"> <div class="absolute z-10 -mt-8 ml-3 p-[4px] border-black border-2 rounded-full bg-red-600"></div></i>
+                    </div>
+                    <div class=" flex rounded-full w-10 h-10 bg-slate-400">
+                        <img class="rounded-full w-full h-full"  src="/images/dp.png" alt="">
+                    </div>
+                </div>
+            </header>
+        
+            
+           
+            
+              
+          
+          
+
+            <div class="bg-white p-10">
+                <div class="flex justify-between">
+                    <p class="font-sans text-base font-semibold text-[#2B3445]">Customer Reviews</p>
+                </div>
+                
+                <!-- Table Header -->
+                <div class="bg-[#989ca3] flex text-white font-semibold py-3 px-5 justify-center items-center">
+                    <div class="w-1/5 flex gap-1 items-center">Name <img src="/images/up-down.png" alt=""></div>
+                    <div class="w-1/5 flex gap-1 items-center">Coustomer<img src="/images/up-down.png" alt=""></div>
+                    <div class="w-1/5 flex gap-1 items-center">Comment<img src="/images/up-down.png" alt=""></div>
+                    <div class="w-1/5 flex gap-1 items-center">Rating<img src="/images/up-down.png" alt=""></div>
+                    <div class="w-1/5 flex gap-1 items-center">Action<img src="/images/up-down.png" alt=""></div>
+                </div>
+            
+                <!-- Table Rows -->
+                <div class="flex flex-col">
+                    <!-- Row 1 -->
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                            <div class="flex">
+                              <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                              <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                              <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                              <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                              <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                            </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+            
+                    <!-- Row 2 -->
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                            <div class="flex">
+                                <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                              </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+                    
+            
+                    <!-- Row 3 -->
+                    
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                                <div class="flex">
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                  </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+            
+                    <!-- Row 4 -->
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                                <div class="flex">
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                  </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+                    <!-- Row 5 -->
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                            <div class="w-1/5">
+                                <div class="flex">
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                  </div>
+                            </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+            
+                    <!-- Row 6 -->
+                    <div class="flex bg-gray-100 py-3 px-5 justify-center items-center">  
+                        <div class="w-1/5">Video Call</div>
+                        <div class="w-1/5">John Smith</div>
+                        <div class="w-1/5 "> “But I must explain to you how all this of denouncing pleasure.”</div>
+                        <div class="w-1/5">
+                            <div class="w-1/5">
+                                <div class="flex">
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                    <i class="fa-solid fa-star" style="color: #d9b120;"></i>
+                                  </div>
+                            </div>
+                        </div>
+                          <div class="w-1/5"><i class="fa-solid fa-eye"></i></div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+          </div>
+            
+
+        </div>
+        
+          
+    </div>
+
+
+    <script>
+        // Get individual toggle switches
+        const toggleSwitch = document.getElementById('toggleSwitch');
+    
+        // Function to toggle dark and light mode on a specific switch
+        function toggleMode(switchElement) {
+            switchElement.classList.toggle('dark-mode');
+            switchElement.classList.toggle('light-mode');
+        }
+    
+        // Add event listeners to each toggle switch
+        
+    
+        toggleSwitch.addEventListener('click', function() {
+            toggleMode(toggleSwitch);
+        });
+    </script>
+    
+</body>
+</html>

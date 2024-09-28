@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for the toggle */
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-switch .toggle-thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode .toggle-switch {
+            background-color: #333;
+        }
+
+        .dark-mode .toggle-thumb {
+            transform: translateX(30px);
+            background-color: #000;
+        }
+        /* cover */
+        .cover{
+            background-color: #1f0d2e;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body class="light-mode bg-gray-100 text-gray-800 transition-colors duration-300">
+    <div class="grid grid-cols-7 lg:grid-cols-12 h-screen">
+        <!-- Column 1 -->
+        <div class="h-full col-span-2 bg-slate-800">
+            <div class="flex flex-row my-6 ml-4 justify-between">
+                <h1 class="text-xl font-poppins text-white">Skill|Set|Grow</h1>
+                <button onclick="">
+                    <i class="fa-solid fa-angle-left text-2xl mr-4 text-white"></i>
+                </button>
+            </div>
+            <h3 class="mt-6 ml-4 text-sm font-semibold font-poppins text-white">TRAINEE</h3>
+            <nav class="flex flex-col py-[15px] mx-4">
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 rounded" href="/sec-1/TrainingCompany.html">
+                  <img class="ml-4" src="./images/dashboard.png" alt="">
+                  <span class="ml-5">Dashboard</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/Chats.html">
+                  <img class="ml-4" src="./images/message.png" alt="">
+                  <span class="ml-5">Messages</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/RunningTask.html">
+                  <img class="ml-4" src="./images/running.png" alt="">
+                  <span class="ml-5">Running Task</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/OwnVideos.html">
+                  <img class="ml-4" src="./images/ownvideo.png" alt="">
+                  <span class="ml-5">Own Videos</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-blue-400 border-2 border-stone-200  hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/TrainingCompany.html">
+                  <img class="ml-4" src="./images/Training.png" alt="">
+                  <span class="ml-5">Training Company</span>
+              </a>
+              <h1 class="text-white text-xs font-poppins py-3">ADDITIONAL</h1>
+              <a class="flex justify-start py-[12px] text-slate-200 border border-stone-200 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/SpendingHistory.html">
+                  <img class="ml-4" src="./images/support.png" alt="">
+                  <span class="ml-5 ">Spending History</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-slate-200 border border-stone-400   hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/setting.html">
+                  <img class="ml-4" src="./images/support.png" alt="">
+                  <span class="ml-5">Settings</span>
+              </a>
+
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/SupportTicker.html">
+                  <img class="ml-4" src="./images/supportTickets.png" alt="">
+                  <span class="ml-5">Support Tickets</span>
+              </a>
+              <a class="flex justify-start py-[12px] text-slate-300 border border-stone-400 hover:border-white hover:text-white transition duration-500 rounded mt-2" href="/sec-1/setting.html">
+                  <img class="ml-4" src="/images/Accountsettings.png" alt="">
+                  <span class="ml-5">Account Settings</span>
+              </a>
+          </nav>
+        </div>
+        <!-- Column 2 to 6 -->
+        <div class="col-span-5 lg:col-span-10 h-full ">
+            <header class="flex justify-between items-center p-4 bg-white shadow-md">
+                <div class="relative flex items-center w-6/12">
+                    <i class="absolute z-10 ml-3 fa-solid fa-magnifying-glass text-gray-500 opacity-40"></i>
+                    <a class="w-full" href="/sec-1/searching.html">
+                    <input class="relative z-0 w-full pl-10 p-2 rounded border border-gray-300" type="search" placeholder="Search anything...">
+                    </a>
+                </div>
+                <div class="flex justify-center w-5/12 items-center ml-24">
+                    <!-- Night mode toggle switch -->
+                    <div id="toggleSwitch" class="toggle-switch mr-3">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                    <p class="opacity-70 mr-8">Night mode</p>
+                    <div class="relative">
+                        <i class="fa-solid fa-chevron-down mr-1"></i>
+                        <i class="relative z-0 mr-6 fa-solid fa-bell text-2xl opacity-70"> <div class="absolute z-10 -mt-8 ml-3 p-[4px] border-black border-2 rounded-full bg-red-600"></div></i>
+                    </div>
+                    <div class=" flex rounded-full w-10 h-10 bg-slate-400">
+                        <img class="rounded-full w-full h-full"  src="/images/dp.png" alt="">
+                    </div>
+                </div>
+            </header>
+        
+            <div class="cover flex w-11/12 h-[460px]  mt-10 ml-[50px]">
+                <div class=" w-10/12 ml-80 flex right-0 h-full" style="background-image: url('/images/tcompanybanner.png');">
+                                     
+                </div>
+                
+            </div>
+            <div class="rounded-3xl w-11/12 -mt-24 h-[188px] flex items-center justify-around">
+                <div class="flex items-center ">
+                  <div class="rounded-full p-1 border-2 mr-6">
+                    <img class="rounded-full" src="/images/ptp.png" alt="" srcset="">
+                  </div>
+                  <div class="font-poppins mt-20">
+                    <div >
+                      <h1 class="flex items-center gap-2 text-xl mb-2 font-bold">Thomas Hope <img src="/images/rt.png" alt="" srcset=""></h1>
+                    </div>
+                    <div class="flex ">
+                      <div class="flex gap-10 items-center justify-center">
+                        <p>@thomashope</p>
+                        <p class="flex gap-2" ><img src="/images/pt.png" alt="" srcset="">200K Trainees</p>
+                        <p class="flex gap-2" ><img src="/images/playbutton.png" alt="">300 Videos</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex mt-28 flex-col justify-center items-center gap-6 ">
+                  <a class="px-4 py-1 bg-[#4E97FD]  text-white rounded-xl " href="">Favorite</a>
+                </div>
+              </div>
+           
+           <legend class="mt-200px">
+            <h2 class="justify-center text-2xl flex items-center font-bold ml-10 mt-10">Trainees <div class="ml-14 mt-1 w-10/12 h-[1px] bg-black"></div> </h2>
+          </legend>
+          <div class="rounded-3xl w-11/12 ml-[57px] mb-6 mt-6 h-[188px] border border-black flex items-center justify-around">
+            
+            <div class="flex items-center ">
+              <div class="rounded-full p-1 border-2 mr-6">
+                <img class="rounded-full" src="/images/ptp.png" alt="" srcset="">
+              </div>
+              <div class="font-poppins">
+                <div >
+                  <h1 class="flex items-center gap-2 text-xl mb-2 font-bold">Thomas Hope <img src="/images/rt.png" alt="" srcset=""></h1>
+                </div>
+                <div class="flex ">
+                  <div class="flex gap-10 items-center justify-center">
+                    <p>@thomashope</p>
+                    <p class="flex gap-2" ><img src="/images/pt.png" alt="" srcset="">200K Trainees</p>
+                    <p class="flex gap-2" ><img src="/images/playbutton.png" alt="">300 Videos</p>
+                  </div>
+                </div>
+
+              </div>
+              
+            </div>
+            <div class="flex flex-col justify-center items-center gap-6 ">
+              <a class="px-4 py-1 bg-[#2B3445]  text-white rounded-xl " href="">Book Call</a>
+              <a href="" class="font-semibold text-xl">$ 40</a>
+            </div>
+          </div>
+           
+          <div class="rounded-3xl w-11/12 ml-[57px] mb-6 mt-6 h-[188px] border border-black flex items-center justify-around">
+            
+            <div class="flex items-center ">
+              <div class="rounded-full p-1 border-2 mr-6">
+                <img class="rounded-full" src="/images/ptp.png" alt="" srcset="">
+              </div>
+              <div class="font-poppins">
+                <div >
+                  <h1 class="flex items-center gap-2 text-xl mb-2 font-bold">Thomas Hope <img src="/images/rt.png" alt="" srcset=""></h1>
+                </div>
+                <div class="flex ">
+                  <div class="flex gap-10 items-center justify-center">
+                    <p>@thomashope</p>
+                    <p class="flex gap-2" ><img src="/images/pt.png" alt="" srcset="">200K Trainees</p>
+                    <p class="flex gap-2" ><img src="/images/playbutton.png" alt="">300 Videos</p>
+                  </div>
+                </div>
+
+              </div>
+              
+            </div>
+            <div class="flex flex-col justify-center items-center gap-6 ">
+              <a class="px-4 py-1 bg-[#2B3445]  text-white rounded-xl " href="">Book Call</a>
+              <a href="" class="font-semibold text-xl">$ 40</a>
+            </div>
+          </div>
+          <h2 class="justify-center text-2xl flex items-center font-bold ml-10 mt-10">Videos <div class="ml-14 mt-1 w-10/12 h-[1px] bg-black"></div> </h2>
+
+              <div id="video-container" class="mt-6 ml-14 flex flex-wrap gap-11 pb-4">
+                <!-- Video 1 -->
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/tiger.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/image2.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/3.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/4.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/tiger.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/image2.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/3.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/4.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/3.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <div class="video w-[259px] h-[325px] flex-shrink-0 bg-white shadow-lg rounded-xl">
+                  <img  src="/images/image2.png" alt="Coding Video 1" class="absolute z-0 w-[259px] h-[165px]">
+                  <div class="bg-[#2B3445] text-white rounded-lg">
+                    <div class="relative ml-48 mt-[140px] border border-white rounded-full w-[60px] h-[60px] p-1 flex justify-center">
+                        <img src="/images/videoc.png" alt="">
+                      </div>
+                      <img src="/images/blueright.png" alt="" class="relative z-30  ml-[228px] -mt-2 ">
+                      <div class="ml-5 -mt-6 flex-col flex gap-2 items-start">
+                        <div class="flex gap-1 items-center">
+                            <p class="text-sm font-medium">Andy William</p> 
+                            <i class="fa-solid fa-circle text-green-500 text-[7px]"></i><br>
+                        </div>
+                        <p class="text-lg font-poppins">Learn the basics of the Coding in 7 min?</p>
+                        <p class="text-slate-400 mt-4 pb-2 rounded-lg">53K views  •  2 weeks ago</p>
+                      </div>
+                  </div>
+                </div>
+                <!-- Add more videos as needed -->
+              </div>
+        </div>    
+    </div>
+
+
+    <!-- script -->
+    <script>
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const body = document.body;
+
+        toggleSwitch.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+</html>

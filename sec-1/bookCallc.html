@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6f145f38e.js" crossorigin="anonymous"></script>
+    <style>
+        /* Custom styles for the toggle */
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-switch .toggle-thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode .toggle-switch {
+            background-color: #333;
+        }
+
+        .dark-mode .toggle-thumb {
+            transform: translateX(30px);
+            background-color: #000;
+        }
+        /* cover */
+        .cover{
+            background-color: #1f0d2e;
+            border-radius: 15px;
+        }
+        /* clndr */
+        #calendar-grid {
+    display: grid; /* Ensure it's a grid layout */
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    gap: 10px; /* Adjust the gap as needed */
+    margin-top: 10px; /* Ensure there is some space above */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Optional padding */
+}
+
+    </style>
+</head>
+<body class="light-mode justify-center items-center  transition-colors duration-300">
+    <div class="flex flex-col justify-center items-center h-screen">
+        <div class="w-8/12 h-full">
+            <div class="p-10">
+                <a href="/sec-1/searching.html" class="text-xl font-poppins"><i class="mr-2 fa-solid fa-chevron-left"></i> Book Video Call</a>
+            </div>
+            
+            <div class="rounded-3xl ml-16 w-full h-[188px] border border-stone-500 flex items-center justify-around">
+                
+                <div class="flex justify-center items-center">
+                  <div class="rounded-full p-1 border-2 mr-6">
+                    <img class="rounded-full" src="/images/ptp.png" alt="" srcset="">
+                  </div>
+                  <div class="font-poppins mt-20">
+                    <div>
+                      <h1 class="flex items-center gap-2 text-xl mb-2 font-bold">Thomas Hope 
+                        <img src="/images/rt.png" alt="" srcset="">
+                      </h1>
+                    </div>
+                    <div class="flex">
+                      <div class="flex gap-10 items-center justify-center">
+                        <p>@thomashope</p>
+                        <p class="flex gap-2"><img src="/images/pt.png" alt="" srcset="">200K Trainees</p>
+                        <p class="flex gap-2"><img src="/images/playbutton.png" alt="">300 Videos</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex mt-28 flex-col justify-center items-center gap-6">
+                  <a class="px-4 py-1 bg-[#4E97FD] text-white rounded-xl" href="">Favorite</a>
+                </div>
+              </div>
+              
+
+
+              <div class="mb-6 ml-[60px] w-full mt-10">
+                <!-- Month Picker for selecting the month (right) -->
+                <div class="relative">
+                  <label for="month-picker" class="-mt-1 block absolute z-10 text-lg font-bold ml-4">Date:</label>
+                  <select id="month-picker" class="relative z-0 -mt-24 text-right border border-gray-500 p-5 rounded-lg w-full">
+                    <option disabled selected>Select Month</option>
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="m-auto ml-[59px] w-full ">
+                <!-- Weekday titles -->
+                <div class="grid grid-cols-7 gap-4 text-center font-bold">
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                  <div>Sun</div>
+                </div>
+              
+                <!-- Calendar Date Grid (6x7) -->
+                <div id="calendar-grid" class="grid grid-cols-7 gap-4 text-center mt-2">
+                    <!-- JavaScript will populate the calendar here -->
+                </div>
+              </div>
+              
+                <!-- Time Slots Section -->
+                <div class="mb-6 ml-[59px] w-full flex flex-col ">
+                    <label class="block text-left text-lg font-bold mb-4 mt-4">Time:</label>
+                    <div class="grid grid-cols-4 w-full gap-4">
+                      <!-- Time slots (4x4 grid) -->
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">09:00 AM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">10:00 AM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">11:00 AM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">12:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">01:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">02:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">03:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">04:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">05:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">06:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">07:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">08:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">09:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">10:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">11:00 PM</button>
+                      <button class="px-4 py-2 border border-gray-300 rounded-lg">12:00 AM</button>
+                    </div>
+                  </div>
+                  
+                  
+                
+                  
+              
+                <!-- Book Call Button -->
+                <div class="text-center pb-10 mt-6">
+                  <button class="w-4/12  py-2 bg-[#1e2530] text-white font-bold rounded-xl">Book Call</button>
+                </div>
+              </div>
+              
+              
+              
+        </div>    
+    </div>
+
+
+    <!-- script -->
+    <script>
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        const body = document.body;
+
+        toggleSwitch.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const calendarGrid = document.getElementById('calendar-grid');
+    const monthPicker = document.getElementById('month-picker');
+    
+    // Get the current date to initialize
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth(); // Get current month (0 = January, 11 = December)
+
+    // Function to render the calendar for a selected month
+    function renderCalendar(month) {
+        calendarGrid.innerHTML = ''; // Clear previous calendar
+        const firstDayOfMonth = new Date(currentYear, month, 1).getDay(); // Get first day of the month
+        const daysInMonth = new Date(currentYear, month + 1, 0).getDate(); // Get number of days in the month
+        
+        // Adjust the start index if the first day is Sunday
+        const startDay = firstDayOfMonth === 0 ? 7 : firstDayOfMonth; 
+
+        // Add empty cells before the first day of the month
+        for (let i = 1; i < startDay; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.classList.add('empty-cell'); // Optional class for styling
+            calendarGrid.appendChild(emptyCell);
+        }
+
+        // Add day numbers for the current month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayCell = document.createElement('div');
+            dayCell.textContent = day;
+            dayCell.classList.add('border', 'border-gray-300', 'p-2', 'rounded-lg');
+            calendarGrid.appendChild(dayCell);
+        }
+    }
+
+    // Event listener to change the calendar when a month is selected
+    monthPicker.addEventListener('change', function () {
+        const selectedMonth = parseInt(this.value); // Get the month value (0 = January, 11 = December)
+        renderCalendar(selectedMonth); // Render calendar based on selected month
+    });
+
+    // Set the month picker to the current month and trigger the change event
+    monthPicker.value = currentMonth; // Set the month picker to the current month
+    monthPicker.dispatchEvent(new Event('change')); // Trigger change event to render calendar
+});
+
+
+
+    </script>
+</body>
+</html>
